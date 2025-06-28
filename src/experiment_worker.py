@@ -14,7 +14,8 @@ import pickle
 # Set backend for matplotlib before other imports
 import matplotlib
 import numpy as np
-from sklearn.model_selection import train_test_split
+from sklearn.model_selection import train_test_split, GridSearchCV, LeaveOneOut
+from sklearn.svm import SVC
 
 matplotlib.use("Agg")
 
@@ -23,7 +24,7 @@ from lib.data_generators import (
     generate_quantum_data,
     generate_rbf_data,
 )
-from lib.model_runners import run_quantum_svm, run_rbf_svm
+from lib.model_runners import run_quantum_svm, run_rbf_svm, _tune_fixed_quantum_kernel
 
 
 def run_single_trial(config: dict, seed: int, results_dir: str):
@@ -35,17 +36,20 @@ def run_single_trial(config: dict, seed: int, results_dir: str):
     output_path = os.path.join(results_dir, exp_name, f"{trial_id}.pkl")
 
     if os.path.exists(output_path):
-        print(f"Skipping already completed trial: {trial_id}")
+        print(f"Skipping already completed trial: {trial_id}", flush=True)
         return
 
-    print(f"--- Starting Trial: {exp_name} (Seed: {seed}) ---")
+    print(f"--- Starting Trial: {exp_name} (Seed: {seed}) ---", flush=True)
     np.random.seed(seed)
 
     # 1. Data Generation
     if config["experiment_type"] == "quantum_learns_rbf":
         X, y = generate_rbf_data(config["rbf_data_params"], seed)
         test_size = config["rbf_data_params"]["test_size"]
-    elif config["experiment_type"] == "rbf_learns_quantum":
+    elif config["experiment_type"] in [
+        "rbf_learns_quantum",
+        "trained_quantum_learns_quantum",
+    ]:
         # This requires a feature map object to be created first
         from lib.kernel_factories import create_fixed_kernel
 
@@ -68,13 +72,20 @@ def run_single_trial(config: dict, seed: int, results_dir: str):
             y_train_full, config["add_noise_percent"] / 100, seed
         )
 
-    # 3-way split for trainable kernels
+    # 3-way split for tuning kernels
     X_kernel_train, y_kernel_train = None, None
-    if config.get("kernel_type") == "trainable":
-        kernel_train_size = config["trainable_kernel_params"]["trainer_config"][
-            "training_subset_size"
-        ]
-        print(f"Training kernel with {kernel_train_size} datapoints")
+    if config["experiment_type"] in [
+        "quantum_learns_rbf",
+        "trained_quantum_learns_quantum",
+    ]:
+        if config.get("kernel_type") == "trainable":
+            kernel_train_size = config["trainable_kernel_params"]["trainer_config"][
+                "training_subset_size"
+            ]
+        else:
+            kernel_train_size = config["qsvc_tuning_params"]["tuning_samples"]
+
+        print(f"Training kernel with {kernel_train_size} datapoints", flush=True)
 
         X_kernel_train, X_train_full, y_kernel_train, y_train_full = train_test_split(
             X_train_full,
@@ -84,14 +95,53 @@ def run_single_trial(config: dict, seed: int, results_dir: str):
             stratify=y_train_full,
         )
         # Train the kernel once here
-        from lib.kernel_factories import create_trainable_kernel
+        if config.get("kernel_type") == "trainable":
+            from lib.kernel_factories import create_trainable_kernel
 
-        print("Training trainable quantum kernel...")
-        trained_quantum_kernel = create_trainable_kernel(
-            config, X_kernel_train, y_kernel_train, seed
-        )
+            print("Training trainable quantum kernel...", flush=True)
+            trained_kernel = create_trainable_kernel(
+                config, X_kernel_train, y_kernel_train, seed
+            )
+        else:
+            # random hyperparameter search
+            trained_kernel = _tune_fixed_quantum_kernel(
+                config, X_kernel_train, y_kernel_train, seed
+            )
+
     else:
-        trained_quantum_kernel = None
+        # Do hyperparameter tuning for RBF SVM
+        if (
+            "rbf_tuning_params" in config
+            and config["experiment_type"] == "rbf_learns_quantum"
+        ):
+            print("Tuning RBF SVM hyperparameters...", flush=True)
+            tuning_config = config["rbf_tuning_params"]
+            tuning_samples = tuning_config["tuning_samples"]
+
+            # Stratified split to get a subset for tuning. The rest of the data is kept for the main training loop.
+            X_tune, X_train_full, y_tune, y_train_full = train_test_split(
+                X_train_full,
+                y_train_full,
+                train_size=tuning_samples,
+                random_state=seed,
+                stratify=y_train_full,
+            )
+
+            param_grid = {"C": tuning_config["C"], "gamma": tuning_config["gamma"]}
+
+            # Using GridSearchCV to find the best hyperparameters
+            grid_search = GridSearchCV(
+                SVC(kernel="rbf"), param_grid, cv=LeaveOneOut(), n_jobs=-1
+            )
+            grid_search.fit(X_tune, y_tune)
+
+            best_params = grid_search.best_params_
+            print(f"Best RBF params found: {best_params}", flush=True)
+
+            # Store the best params to be used by the RBF SVM runner
+            config["tuned_rbf_params"] = best_params
+
+        trained_kernel = None
 
     # 2. Run models over different training sizes
     trial_results = {}
@@ -119,7 +169,7 @@ def run_single_trial(config: dict, seed: int, results_dir: str):
                     "training_times": [],
                 }
 
-            print(f"  Training {model_name} on {size} samples...")
+            print(f"  Training {model_name} on {size} samples...", flush=True)
             result = runner_func(
                 config,
                 X_train_step,
@@ -127,7 +177,7 @@ def run_single_trial(config: dict, seed: int, results_dir: str):
                 X_test,
                 y_test,
                 seed,
-                trained_kernel=trained_quantum_kernel,  # Pass the trained kernel
+                trained_kernel=trained_kernel,  # Pass the trained kernel
             )
 
             trial_results[model_name]["train_sizes"].append(size)

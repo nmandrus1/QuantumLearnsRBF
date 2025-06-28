@@ -1,0 +1,36 @@
+[
+  {
+    "experiment_name": "Trained-Quantum-vs-RBF-on-Quantum-Data",
+    "enabled": true,
+    "execution_params": {
+      "num_trials": 3,
+      "base_seed": 202
+    },
+    "experiment_type": "trained_quantum_learns_quantum",
+    "kernel_type": "trainable",
+    "data_generation_params": {
+        "total_samples": 2000,
+        "gap": 0.1,
+        "test_size": 0.20
+    },
+    "feature_map": {
+        "name": "ZZFeatureMap",
+        "n_qubits": 2,
+        "reps": 2,
+        "entanglement": "linear"
+    },
+    "comparison_train_sizes": [50, 100, 200, 300, 400, 500, 1000],
+    "add_noise_percent": 0,
+    "trainable_kernel_params": {
+        "num_qubits": 4,
+        "reps": 2,
+        "entanglement": "alternating",
+        "trainer_config": {
+            "max_iters": 100,
+            "regularization_c": 0.25,
+            "training_subset_size": 200
+        }
+    }
+  }
+]
+

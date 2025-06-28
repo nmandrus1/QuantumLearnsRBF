@@ -32,19 +32,19 @@ def launch_worker(args):
     print(command)
 
     # We run the subprocess from the src directory to ensure correct module resolution
+    # By removing capture_output=True, the worker's stdout/stderr will be streamed in real-time.
     process = subprocess.run(
-        command, cwd=os.path.dirname(__file__), capture_output=True, text=True
+        command, cwd=os.path.dirname(__file__), text=True
     )
 
     if process.returncode != 0:
         print(f"--- ERROR in worker (seed {seed}) ---")
-        print(process.stdout)
-        print(process.stderr)
+        # The worker's output has already been streamed.
         print("-------------------------------------")
         return False
 
+    # A final message is useful to confirm completion, but the worker's output is now streamed.
     print(f"Worker with seed {seed} completed successfully.")
-    print(process.stdout)  # Uncomment for verbose output
     return True
 
 

@@ -1,0 +1,328 @@
+[
+  {
+    "experiment_name": "RBF-vs-2Q-2R-EntF-Noise0",
+    "enabled": true,
+    "execution_params": {
+      "num_trials": 10,
+      "base_seed": 42
+    },
+    "experiment_type": "rbf_learns_quantum",
+    "data_generation_params": {
+        "total_samples": 5300,
+        "gap": 0.1,
+        "test_size": 0.20
+    },
+    "feature_map": {
+        "name": "ZZFeatureMap",
+        "n_qubits": 2,
+        "reps": 2,
+        "entanglement": "full"
+    },
+    "rbf_tuning_params": {
+      "tuning_samples": 200,
+      "C": [0.01, 0.1, 1.0, 10.0, 100.0, 1000.0],
+      "gamma": ["scale", "auto", 0.1, 1.0, 10]
+    },
+    "comparison_train_sizes": [50, 100, 200, 300, 400, 500, 1000, 2000, 4000],
+    "add_noise_percent": 0
+  },
+ {
+    "experiment_name": "RBF-vs-2Q-2R-EntL-Noise0",
+    "enabled": true,
+    "execution_params": {
+      "num_trials": 10,
+      "base_seed": 42
+    },
+    "experiment_type": "rbf_learns_quantum",
+    "data_generation_params": {
+        "total_samples": 5300,
+        "gap": 0.1,
+        "test_size": 0.20
+    },
+    "feature_map": {
+        "name": "ZZFeatureMap",
+        "n_qubits": 2,
+        "reps": 2,
+        "entanglement": "linear"
+    },
+    "rbf_tuning_params": {
+      "tuning_samples": 200,
+      "C": [0.01, 0.1, 1.0, 10.0, 100.0, 1000.0],
+      "gamma": ["scale", "auto", 0.1, 1.0, 10]
+    },
+    "comparison_train_sizes": [50, 100, 200, 300, 400, 500, 1000, 2000, 4000],
+    "add_noise_percent": 0
+  } ,
+  {
+    "experiment_name": "RBF-vs-2Q-2R-Entc-Noise0",
+    "enabled": true,
+    "execution_params": {
+      "num_trials": 10,
+      "base_seed": 42
+    },
+    "experiment_type": "rbf_learns_quantum",
+    "data_generation_params": {
+        "total_samples": 5300,
+        "gap": 0.1,
+        "test_size": 0.20
+    },
+    "feature_map": {
+        "name": "ZZFeatureMap",
+        "n_qubits": 2,
+        "reps": 2,
+        "entanglement": "circular"
+    },
+    "rbf_tuning_params": {
+      "tuning_samples": 200,
+      "C": [0.01, 0.1, 1.0, 10.0, 100.0, 1000.0],
+      "gamma": ["scale", "auto", 0.1, 1.0, 10]
+    },
+    "comparison_train_sizes": [50, 100, 200, 300, 400, 500, 1000, 2000, 4000],
+    "add_noise_percent": 0
+  },
+  {
+    "experiment_name": "RBF-vs-2Q-2R-EntF-Noise5",
+    "enabled": true,
+    "execution_params": {
+      "num_trials": 10,
+      "base_seed": 42
+    },
+    "experiment_type": "rbf_learns_quantum",
+    "data_generation_params": {
+        "total_samples": 5300,
+        "gap": 0.1,
+        "test_size": 0.20
+    },
+    "feature_map": {
+        "name": "ZZFeatureMap",
+        "n_qubits": 2,
+        "reps": 2,
+        "entanglement": "full"
+    },
+    "rbf_tuning_params": {
+      "tuning_samples": 200,
+      "C": [0.01, 0.1, 1.0, 10.0, 100.0, 1000.0],
+      "gamma": ["scale", "auto", 0.1, 1.0, 10]
+    },
+    "comparison_train_sizes": [50, 100, 200, 300, 400, 500, 1000, 2000, 4000],
+    "add_noise_percent": 5
+  },
+ {
+    "experiment_name": "RBF-vs-2Q-2R-EntL-Noise5",
+    "enabled": true,
+    "execution_params": {
+      "num_trials": 10,
+      "base_seed": 42
+    },
+    "experiment_type": "rbf_learns_quantum",
+    "data_generation_params": {
+        "total_samples": 5300,
+        "gap": 0.1,
+        "test_size": 0.20
+    },
+    "feature_map": {
+        "name": "ZZFeatureMap",
+        "n_qubits": 2,
+        "reps": 2,
+        "entanglement": "linear"
+    },
+    "rbf_tuning_params": {
+      "tuning_samples": 200,
+      "C": [0.01, 0.1, 1.0, 10.0, 100.0, 1000.0],
+      "gamma": ["scale", "auto", 0.1, 1.0, 10]
+    },
+    "comparison_train_sizes": [50, 100, 200, 300, 400, 500, 1000, 2000, 4000],
+    "add_noise_percent": 5
+  } ,
+  {
+    "experiment_name": "RBF-vs-2Q-2R-Entc-Noise5",
+    "enabled": true,
+    "execution_params": {
+      "num_trials": 10,
+      "base_seed": 42
+    },
+    "experiment_type": "rbf_learns_quantum",
+    "data_generation_params": {
+        "total_samples": 5300,
+        "gap": 0.1,
+        "test_size": 0.20
+    },
+    "feature_map": {
+        "name": "ZZFeatureMap",
+        "n_qubits": 2,
+        "reps": 2,
+        "entanglement": "circular"
+    },
+    "rbf_tuning_params": {
+      "tuning_samples": 200,
+      "C": [0.01, 0.1, 1.0, 10.0, 100.0, 1000.0],
+      "gamma": ["scale", "auto", 0.1, 1.0, 10]
+    },
+    "comparison_train_sizes": [50, 100, 200, 300, 400, 500, 1000, 2000, 4000],
+    "add_noise_percent": 5
+  },
+  {
+    "experiment_name": "RBF-vs-2Q-2R-EntF-Noise10",
+    "enabled": true,
+    "execution_params": {
+      "num_trials": 10,
+      "base_seed": 42
+    },
+    "experiment_type": "rbf_learns_quantum",
+    "data_generation_params": {
+        "total_samples": 5300,
+        "gap": 0.1,
+        "test_size": 0.20
+    },
+    "feature_map": {
+        "name": "ZZFeatureMap",
+        "n_qubits": 2,
+        "reps": 2,
+        "entanglement": "full"
+    },
+    "rbf_tuning_params": {
+      "tuning_samples": 200,
+      "C": [0.01, 0.1, 1.0, 10.0, 100.0, 1000.0],
+      "gamma": ["scale", "auto", 0.1, 1.0, 10]
+    },
+    "comparison_train_sizes": [50, 100, 200, 300, 400, 500, 1000, 2000, 4000],
+    "add_noise_percent": 10
+  },
+ {
+    "experiment_name": "RBF-vs-2Q-2R-EntL-Noise10",
+    "enabled": true,
+    "execution_params": {
+      "num_trials": 10,
+      "base_seed": 42
+    },
+    "experiment_type": "rbf_learns_quantum",
+    "data_generation_params": {
+        "total_samples": 5300,
+        "gap": 0.1,
+        "test_size": 0.20
+    },
+    "feature_map": {
+        "name": "ZZFeatureMap",
+        "n_qubits": 2,
+        "reps": 2,
+        "entanglement": "linear"
+    },
+    "rbf_tuning_params": {
+      "tuning_samples": 200,
+      "C": [0.01, 0.1, 1.0, 10.0, 100.0, 1000.0],
+      "gamma": ["scale", "auto", 0.1, 1.0, 10]
+    },
+    "comparison_train_sizes": [50, 100, 200, 300, 400, 500, 1000, 2000, 4000],
+    "add_noise_percent": 10
+  } ,
+  {
+    "experiment_name": "RBF-vs-2Q-2R-Entc-Noise10",
+    "enabled": true,
+    "execution_params": {
+      "num_trials": 10,
+      "base_seed": 42
+    },
+    "experiment_type": "rbf_learns_quantum",
+    "data_generation_params": {
+        "total_samples": 5300,
+        "gap": 0.1,
+        "test_size": 0.20
+    },
+    "feature_map": {
+        "name": "ZZFeatureMap",
+        "n_qubits": 2,
+        "reps": 2,
+        "entanglement": "circular"
+    },
+    "rbf_tuning_params": {
+      "tuning_samples": 200,
+      "C": [0.01, 0.1, 1.0, 10.0, 100.0, 1000.0],
+      "gamma": ["scale", "auto", 0.1, 1.0, 10]
+    },
+    "comparison_train_sizes": [50, 100, 200, 300, 400, 500, 1000, 2000, 4000],
+    "add_noise_percent": 10
+  },
+
+{
+    "experiment_name": "RBF-vs-2Q-2R-EntF-Noise15",
+    "enabled": true,
+    "execution_params": {
+      "num_trials": 10,
+      "base_seed": 42
+    },
+    "experiment_type": "rbf_learns_quantum",
+    "data_generation_params": {
+        "total_samples": 5300,
+        "gap": 0.1,
+        "test_size": 0.20
+    },
+    "feature_map": {
+        "name": "ZZFeatureMap",
+        "n_qubits": 2,
+        "reps": 2,
+        "entanglement": "full"
+    },
+    "rbf_tuning_params": {
+      "tuning_samples": 200,
+      "C": [0.01, 0.1, 1.0, 10.0, 100.0, 1000.0],
+      "gamma": ["scale", "auto", 0.1, 1.0, 10]
+    },
+    "comparison_train_sizes": [50, 100, 200, 300, 400, 500, 1000, 2000, 4000],
+    "add_noise_percent": 15
+  },
+ {
+    "experiment_name": "RBF-vs-2Q-2R-EntL-Noise15",
+    "enabled": true,
+    "execution_params": {
+      "num_trials": 10,
+      "base_seed": 42
+    },
+    "experiment_type": "rbf_learns_quantum",
+    "data_generation_params": {
+        "total_samples": 5300,
+        "gap": 0.1,
+        "test_size": 0.20
+    },
+    "feature_map": {
+        "name": "ZZFeatureMap",
+        "n_qubits": 2,
+        "reps": 2,
+        "entanglement": "linear"
+    },
+    "rbf_tuning_params": {
+      "tuning_samples": 200,
+      "C": [0.01, 0.1, 1.0, 10.0, 100.0, 1000.0],
+      "gamma": ["scale", "auto", 0.1, 1.0, 10]
+    },
+    "comparison_train_sizes": [50, 100, 200, 300, 400, 500, 1000, 2000, 4000],
+    "add_noise_percent": 15
+  } ,
+  {
+    "experiment_name": "RBF-vs-2Q-2R-Entc-Noise15",
+    "enabled": true,
+    "execution_params": {
+      "num_trials": 10,
+      "base_seed": 42
+    },
+    "experiment_type": "rbf_learns_quantum",
+    "data_generation_params": {
+        "total_samples": 5300,
+        "gap": 0.1,
+        "test_size": 0.20
+    },
+    "feature_map": {
+        "name": "ZZFeatureMap",
+        "n_qubits": 2,
+        "reps": 2,
+        "entanglement": "circular"
+    },
+    "rbf_tuning_params": {
+      "tuning_samples": 200,
+      "C": [0.01, 0.1, 1.0, 10.0, 100.0, 1000.0],
+      "gamma": ["scale", "auto", 0.1, 1.0, 10]
+    },
+    "comparison_train_sizes": [50, 100, 200, 300, 400, 500, 1000, 2000, 4000],
+    "add_noise_percent": 15
+  }
+]
+
