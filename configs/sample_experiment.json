@@ -1,0 +1,36 @@
+[
+  {
+    "experiment_name": "Quantum-Learns-RBF-Gamma1.5-Noise0",
+    "enabled": true,
+    "execution_params": {
+      "num_trials": 10,
+      "base_seed": 42
+    },
+    "experiment_type": "quantum_learns_rbf",
+    "rbf_data_params": {
+      "n_samples": 5000,
+      "n_support_vectors": 15,
+      "gamma": 1.5,
+      "test_size": 0.2,
+      "kernel_train_size": 1000,
+      "feature_range": [0, 6.28]
+    },
+    "qsvc_tuning_params": {
+        "tuning_samples": 200,
+        "n_iter_random": 50, 
+        "parameter_space": {
+            "qsvc__C": [1, 10, 100, 1000],
+            "qsvc__reps": [1, 2, 3, 4],
+            "qsvc__entanglement": ["linear", "circular", "full"],
+            "pauli_search_constraints": {
+                "base_paulis": ["Z"],
+                "max_pauli_order": 2,
+                "max_num_terms_in_set": 2,
+                "min_num_terms_in_set": 2
+            }
+        }
+    },
+    "comparison_train_sizes": [50, 100, 200, 500, 1000, 2000, 4000],
+    "add_noise_percent": 0
+  }
+]

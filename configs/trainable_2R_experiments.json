@@ -1,0 +1,470 @@
+[
+  {
+    "experiment_name": "Reupload-4Q-2R-vs-RBF-Gamma1.5-Noise0",
+    "enabled": true,
+    "execution_params": {
+      "num_trials": 10,
+      "base_seed": 202
+    },
+    "experiment_type": "quantum_learns_rbf",
+    "kernel_type": "trainable",
+    "rbf_data_params": {
+      "n_samples": 6000,
+      "n_support_vectors": 15,
+      "gamma": 1.5,
+      "test_size": 0.2,
+      "feature_range": [0, 6.28]
+    },
+    "comparison_train_sizes": [50, 100, 200, 300, 400, 500, 1000, 1500, 2000, 4000],
+    "add_noise_percent": 0,
+    "trainable_kernel_params": {
+        "num_qubits": 4,
+        "reps": 2,
+        "entanglement": "alternating",
+        "trainer_config": {
+            "max_iters": 100,
+            "regularization_c": 0.25,
+            "training_subset_size": 200
+        }
+    }
+  },
+  {
+    "experiment_name": "Reupload-4Q-2R-vs-RBF-Gamma1.5-Noise5",
+    "enabled": true,
+    "execution_params": {
+      "num_trials": 10,
+      "base_seed": 202
+    },
+    "experiment_type": "quantum_learns_rbf",
+    "kernel_type": "trainable",
+    "rbf_data_params": {
+      "n_samples": 6000,
+      "n_support_vectors": 15,
+      "gamma": 1.5,
+      "test_size": 0.2,
+      "feature_range": [0, 6.28]
+    },
+    "comparison_train_sizes": [50, 100, 200, 300, 400, 500, 1000, 1500, 2000, 4000],
+    "add_noise_percent": 5,
+    "trainable_kernel_params": {
+        "num_qubits": 4,
+        "reps": 2,
+        "entanglement": "alternating",
+        "trainer_config": {
+            "max_iters": 100,
+            "regularization_c": 0.25,
+            "training_subset_size": 200
+        }
+    }
+  },
+
+{
+    "experiment_name": "Reupload-4Q-2R-vs-RBF-Gamma1.5-Noise10",
+    "enabled": true,
+    "execution_params": {
+      "num_trials": 10,
+      "base_seed": 202
+    },
+    "experiment_type": "quantum_learns_rbf",
+    "kernel_type": "trainable",
+    "rbf_data_params": {
+      "n_samples": 6000,
+      "n_support_vectors": 15,
+      "gamma": 1.5,
+      "test_size": 0.2,
+      "feature_range": [0, 6.28]
+    },
+    "comparison_train_sizes": [50, 100, 200, 300, 400, 500, 1000, 1500, 2000, 4000],
+    "add_noise_percent": 10,
+    "trainable_kernel_params": {
+        "num_qubits": 4,
+        "reps": 2,
+        "entanglement": "alternating",
+        "trainer_config": {
+            "max_iters": 100,
+            "regularization_c": 0.25,
+            "training_subset_size": 200
+        }
+    }
+  },
+  {
+    "experiment_name": "Reupload-4Q-2R-vs-RBF-Gamma1.5-Noise15",
+    "enabled": true,
+    "execution_params": {
+      "num_trials": 10,
+      "base_seed": 202
+    },
+    "experiment_type": "quantum_learns_rbf",
+    "kernel_type": "trainable",
+    "rbf_data_params": {
+      "n_samples": 6000,
+      "n_support_vectors": 15,
+      "gamma": 1.5,
+      "test_size": 0.2,
+      "feature_range": [0, 6.28]
+    },
+    "comparison_train_sizes": [50, 100, 200, 300, 400, 500, 1000, 1500, 2000, 4000],
+    "add_noise_percent": 15,
+    "trainable_kernel_params": {
+        "num_qubits": 4,
+        "reps": 2,
+        "entanglement": "alternating",
+        "trainer_config": {
+            "max_iters": 100,
+            "regularization_c": 0.25,
+            "training_subset_size": 200
+        }
+    }
+  },
+  {
+    "experiment_name": "Reupload-4Q-2R-vs-RBF-Gamma3-Noise0",
+    "enabled": true,
+    "execution_params": {
+      "num_trials": 10,
+      "base_seed": 202
+    },
+    "experiment_type": "quantum_learns_rbf",
+    "kernel_type": "trainable",
+    "rbf_data_params": {
+      "n_samples": 6000,
+      "n_support_vectors": 15,
+      "gamma": 3,
+      "test_size": 0.2,
+      "feature_range": [0, 6.28]
+    },
+    "comparison_train_sizes": [50, 100, 200, 300, 400, 500, 1000, 1500, 2000, 4000],
+    "add_noise_percent": 0,
+    "trainable_kernel_params": {
+        "num_qubits": 4,
+        "reps": 2,
+        "entanglement": "alternating",
+        "trainer_config": {
+            "max_iters": 100,
+            "regularization_c": 0.25,
+            "training_subset_size": 200
+        }
+    }
+  },
+  {
+    "experiment_name": "Reupload-4Q-2R-vs-RBF-Gamma3-Noise5",
+    "enabled": true,
+    "execution_params": {
+      "num_trials": 10,
+      "base_seed": 202
+    },
+    "experiment_type": "quantum_learns_rbf",
+    "kernel_type": "trainable",
+    "rbf_data_params": {
+      "n_samples": 6000,
+      "n_support_vectors": 15,
+      "gamma": 3,
+      "test_size": 0.2,
+      "feature_range": [0, 6.28]
+    },
+    "comparison_train_sizes": [50, 100, 200, 300, 400, 500, 1000, 1500, 2000, 4000],
+    "add_noise_percent": 5,
+    "trainable_kernel_params": {
+        "num_qubits": 4,
+        "reps": 2,
+        "entanglement": "alternating",
+        "trainer_config": {
+            "max_iters": 100,
+            "regularization_c": 0.25,
+            "training_subset_size": 200
+        }
+    }
+  },
+
+{
+    "experiment_name": "Reupload-4Q-2R-vs-RBF-Gamma3-Noise10",
+    "enabled": true,
+    "execution_params": {
+      "num_trials": 10,
+      "base_seed": 202
+    },
+    "experiment_type": "quantum_learns_rbf",
+    "kernel_type": "trainable",
+    "rbf_data_params": {
+      "n_samples": 6000,
+      "n_support_vectors": 15,
+      "gamma": 3,
+      "test_size": 0.2,
+      "feature_range": [0, 6.28]
+    },
+    "comparison_train_sizes": [50, 100, 200, 300, 400, 500, 1000, 1500, 2000, 4000],
+    "add_noise_percent": 10,
+    "trainable_kernel_params": {
+        "num_qubits": 4,
+        "reps": 2,
+        "entanglement": "alternating",
+        "trainer_config": {
+            "max_iters": 100,
+            "regularization_c": 0.25,
+            "training_subset_size": 200
+        }
+    }
+  },
+  {
+    "experiment_name": "Reupload-4Q-2R-vs-RBF-Gamma3-Noise15",
+    "enabled": true,
+    "execution_params": {
+      "num_trials": 10,
+      "base_seed": 202
+    },
+    "experiment_type": "quantum_learns_rbf",
+    "kernel_type": "trainable",
+    "rbf_data_params": {
+      "n_samples": 6000,
+      "n_support_vectors": 15,
+      "gamma": 3,
+      "test_size": 0.2,
+      "feature_range": [0, 6.28]
+    },
+    "comparison_train_sizes": [50, 100, 200, 300, 400, 500, 1000, 1500, 2000, 4000],
+    "add_noise_percent": 15,
+    "trainable_kernel_params": {
+        "num_qubits": 4,
+        "reps": 2,
+        "entanglement": "alternating",
+        "trainer_config": {
+            "max_iters": 100,
+            "regularization_c": 0.25,
+            "training_subset_size": 200
+        }
+    }
+  },
+  {
+    "experiment_name": "Reupload-4Q-2R-vs-RBF-Gamma5-Noise0",
+    "enabled": true,
+    "execution_params": {
+      "num_trials": 10,
+      "base_seed": 202
+    },
+    "experiment_type": "quantum_learns_rbf",
+    "kernel_type": "trainable",
+    "rbf_data_params": {
+      "n_samples": 6000,
+      "n_support_vectors": 15,
+      "gamma": 5,
+      "test_size": 0.2,
+      "feature_range": [0, 6.28]
+    },
+    "comparison_train_sizes": [50, 100, 200, 300, 400, 500, 1000, 1500, 2000, 4000],
+    "add_noise_percent": 0,
+    "trainable_kernel_params": {
+        "num_qubits": 4,
+        "reps": 2,
+        "entanglement": "alternating",
+        "trainer_config": {
+            "max_iters": 100,
+            "regularization_c": 0.25,
+            "training_subset_size": 200
+        }
+    }
+  },
+  {
+    "experiment_name": "Reupload-4Q-2R-vs-RBF-Gamma5-Noise5",
+    "enabled": true,
+    "execution_params": {
+      "num_trials": 10,
+      "base_seed": 202
+    },
+    "experiment_type": "quantum_learns_rbf",
+    "kernel_type": "trainable",
+    "rbf_data_params": {
+      "n_samples": 6000,
+      "n_support_vectors": 15,
+      "gamma": 5,
+      "test_size": 0.2,
+      "feature_range": [0, 6.28]
+    },
+    "comparison_train_sizes": [50, 100, 200, 300, 400, 500, 1000, 1500, 2000, 4000],
+    "add_noise_percent": 5,
+    "trainable_kernel_params": {
+        "num_qubits": 4,
+        "reps": 2,
+        "entanglement": "alternating",
+        "trainer_config": {
+            "max_iters": 100,
+            "regularization_c": 0.25,
+            "training_subset_size": 200
+        }
+    }
+  },
+
+{
+    "experiment_name": "Reupload-4Q-2R-vs-RBF-Gamma5-Noise10",
+    "enabled": true,
+    "execution_params": {
+      "num_trials": 10,
+      "base_seed": 202
+    },
+    "experiment_type": "quantum_learns_rbf",
+    "kernel_type": "trainable",
+    "rbf_data_params": {
+      "n_samples": 6000,
+      "n_support_vectors": 15,
+      "gamma": 5,
+      "test_size": 0.2,
+      "feature_range": [0, 6.28]
+    },
+    "comparison_train_sizes": [50, 100, 200, 300, 400, 500, 1000, 1500, 2000, 4000],
+    "add_noise_percent": 10,
+    "trainable_kernel_params": {
+        "num_qubits": 4,
+        "reps": 2,
+        "entanglement": "alternating",
+        "trainer_config": {
+            "max_iters": 100,
+            "regularization_c": 0.25,
+            "training_subset_size": 200
+        }
+    }
+  },
+  {
+    "experiment_name": "Reupload-4Q-2R-vs-RBF-Gamma5-Noise15",
+    "enabled": true,
+    "execution_params": {
+      "num_trials": 10,
+      "base_seed": 202
+    },
+    "experiment_type": "quantum_learns_rbf",
+    "kernel_type": "trainable",
+    "rbf_data_params": {
+      "n_samples": 6000,
+      "n_support_vectors": 15,
+      "gamma": 5,
+      "test_size": 0.2,
+      "feature_range": [0, 6.28]
+    },
+    "comparison_train_sizes": [50, 100, 200, 300, 400, 500, 1000, 1500, 2000, 4000],
+    "add_noise_percent": 15,
+    "trainable_kernel_params": {
+        "num_qubits": 4,
+        "reps": 2,
+        "entanglement": "alternating",
+        "trainer_config": {
+            "max_iters": 100,
+            "regularization_c": 0.25,
+            "training_subset_size": 200
+        }
+    }
+  },
+  {
+    "experiment_name": "Reupload-4Q-2R-vs-RBF-Gamma8-Noise0",
+    "enabled": true,
+    "execution_params": {
+      "num_trials": 10,
+      "base_seed": 202
+    },
+    "experiment_type": "quantum_learns_rbf",
+    "kernel_type": "trainable",
+    "rbf_data_params": {
+      "n_samples": 6000,
+      "n_support_vectors": 15,
+      "gamma": 8,
+      "test_size": 0.2,
+      "feature_range": [0, 6.28]
+    },
+    "comparison_train_sizes": [50, 100, 200, 300, 400, 500, 1000, 1500, 2000, 4000],
+    "add_noise_percent": 0,
+    "trainable_kernel_params": {
+        "num_qubits": 4,
+        "reps": 2,
+        "entanglement": "alternating",
+        "trainer_config": {
+            "max_iters": 100,
+            "regularization_c": 0.25,
+            "training_subset_size": 200
+        }
+    }
+  },
+  {
+    "experiment_name": "Reupload-4Q-2R-vs-RBF-Gamma8-Noise5",
+    "enabled": true,
+    "execution_params": {
+      "num_trials": 10,
+      "base_seed": 202
+    },
+    "experiment_type": "quantum_learns_rbf",
+    "kernel_type": "trainable",
+    "rbf_data_params": {
+      "n_samples": 6000,
+      "n_support_vectors": 15,
+      "gamma": 8,
+      "test_size": 0.2,
+      "feature_range": [0, 6.28]
+    },
+    "comparison_train_sizes": [50, 100, 200, 300, 400, 500, 1000, 1500, 2000, 4000],
+    "add_noise_percent": 5,
+    "trainable_kernel_params": {
+        "num_qubits": 4,
+        "reps": 2,
+        "entanglement": "alternating",
+        "trainer_config": {
+            "max_iters": 100,
+            "regularization_c": 0.25,
+            "training_subset_size": 200
+        }
+    }
+  },
+
+{
+    "experiment_name": "Reupload-4Q-2R-vs-RBF-Gamma8-Noise10",
+    "enabled": true,
+    "execution_params": {
+      "num_trials": 10,
+      "base_seed": 202
+    },
+    "experiment_type": "quantum_learns_rbf",
+    "kernel_type": "trainable",
+    "rbf_data_params": {
+      "n_samples": 6000,
+      "n_support_vectors": 15,
+      "gamma": 8,
+      "test_size": 0.2,
+      "feature_range": [0, 6.28]
+    },
+    "comparison_train_sizes": [50, 100, 200, 300, 400, 500, 1000, 1500, 2000, 4000],
+    "add_noise_percent": 10,
+    "trainable_kernel_params": {
+        "num_qubits": 4,
+        "reps": 2,
+        "entanglement": "alternating",
+        "trainer_config": {
+            "max_iters": 100,
+            "regularization_c": 0.25,
+            "training_subset_size": 200
+        }
+    }
+  },
+  {
+    "experiment_name": "Reupload-4Q-2R-vs-RBF-Gamma8-Noise15",
+    "enabled": true,
+    "execution_params": {
+      "num_trials": 10,
+      "base_seed": 202
+    },
+    "experiment_type": "quantum_learns_rbf",
+    "kernel_type": "trainable",
+    "rbf_data_params": {
+      "n_samples": 6000,
+      "n_support_vectors": 15,
+      "gamma": 8,
+      "test_size": 0.2,
+      "feature_range": [0, 6.28]
+    },
+    "comparison_train_sizes": [50, 100, 200, 300, 400, 500, 1000, 1500, 2000, 4000],
+    "add_noise_percent": 15,
+    "trainable_kernel_params": {
+        "num_qubits": 4,
+        "reps": 2,
+        "entanglement": "alternating",
+        "trainer_config": {
+            "max_iters": 100,
+            "regularization_c": 0.25,
+            "training_subset_size": 200
+        }
+    }
+  }
+]

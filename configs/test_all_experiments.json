@@ -1,0 +1,88 @@
+[
+  {
+    "experiment_name": "Test-Quantum-Learns-RBF-Fixed",
+    "enabled": true,
+    "execution_params": {
+      "num_trials": 10,
+      "base_seed": 101
+    },
+    "experiment_type": "quantum_learns_rbf",
+    "rbf_data_params": {
+      "n_samples": 1000,
+      "n_support_vectors": 10,
+      "gamma": 1.5,
+      "test_size": 0.2,
+      "feature_range": [0, 6.28]
+    },
+    "qsvc_tuning_params": {
+        "tuning_samples": 100,
+        "n_iter_random": 4, 
+        "parameter_space": {
+            "qsvc__C": [1, 10],
+            "qsvc__reps": [1, 2],
+            "qsvc__entanglement": ["linear"],
+            "pauli_search_constraints": {
+                "base_paulis": ["Z"],
+                "max_pauli_order": 2,
+                "max_num_terms_in_set": 2,
+                "min_num_terms_in_set": 2
+            }
+        }
+    },
+    "comparison_train_sizes": [50, 100],
+    "add_noise_percent": 0
+  },
+  {
+    "experiment_name": "Test-Quantum-Learns-RBF-Trainable",
+    "enabled": true,
+    "execution_params": {
+      "num_trials": 10,
+      "base_seed": 202
+    },
+    "experiment_type": "quantum_learns_rbf",
+    "kernel_type": "trainable",
+    "rbf_data_params": {
+      "n_samples": 2000,
+      "n_support_vectors": 15,
+      "gamma": 1.5,
+      "test_size": 0.2,
+      "kernel_train_size": 500,
+      "feature_range": [0, 6.28]
+    },
+    "comparison_train_sizes": [50, 100, 200],
+    "add_noise_percent": 5,
+    "trainable_kernel_params": {
+        "num_qubits": 2,
+        "reps": 2,
+        "entanglement": "linear",
+        "trainer_config": {
+            "max_iters": 20,
+            "regularization_c": 0.3,
+            "training_subset_size": 100
+        }
+    }
+  },
+  {
+    "experiment_name": "Test-RBF-Learns-Quantum",
+    "enabled": true,
+    "execution_params": {
+      "num_trials": 10,
+      "base_seed": 303
+    },
+    "experiment_type": "rbf_learns_quantum",
+    "feature_map": {
+        "name": "PauliFeatureMap",
+        "n_qubits": 2,
+        "reps": 2,
+        "entanglement": "linear",
+        "paulis": ["Z", "ZZ"]
+    },
+    "data_generation_params": {
+        "total_samples": 500,
+        "gap": 0.4,
+        "test_size": 0.25
+    },
+    "comparison_train_sizes": [50, 100],
+    "add_noise_percent": 0
+  }
+]
