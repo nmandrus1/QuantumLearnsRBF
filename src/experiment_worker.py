@@ -130,9 +130,7 @@ def run_single_trial(config: dict, seed: int, results_dir: str):
             param_grid = {"C": tuning_config["C"], "gamma": tuning_config["gamma"]}
 
             # Using GridSearchCV to find the best hyperparameters
-            grid_search = GridSearchCV(
-                SVC(kernel="rbf"), param_grid, cv=LeaveOneOut(), n_jobs=-1
-            )
+            grid_search = GridSearchCV(SVC(kernel="rbf"), param_grid, cv=5, n_jobs=-1)
             grid_search.fit(X_tune, y_tune)
 
             best_params = grid_search.best_params_

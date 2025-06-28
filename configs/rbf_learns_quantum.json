@@ -1,6 +1,6 @@
 [
   {
-    "experiment_name": "RBF-vs-2Q-2R-EntF-Noise0",
+    "experiment_name": "RBF-vs-2Q-2R-EntF-Noise0-5Fcv",
     "enabled": true,
     "execution_params": {
       "num_trials": 10,
@@ -27,7 +27,7 @@
     "add_noise_percent": 0
   },
  {
-    "experiment_name": "RBF-vs-2Q-2R-EntL-Noise0",
+    "experiment_name": "RBF-vs-2Q-2R-EntL-Noise0-5Fcv",
     "enabled": true,
     "execution_params": {
       "num_trials": 10,
@@ -54,7 +54,7 @@
     "add_noise_percent": 0
   } ,
   {
-    "experiment_name": "RBF-vs-2Q-2R-Entc-Noise0",
+    "experiment_name": "RBF-vs-2Q-2R-Entc-Noise0-5Fcv",
     "enabled": true,
     "execution_params": {
       "num_trials": 10,
@@ -81,7 +81,7 @@
     "add_noise_percent": 0
   },
   {
-    "experiment_name": "RBF-vs-2Q-2R-EntF-Noise5",
+    "experiment_name": "RBF-vs-2Q-2R-EntF-Noise5-5Fcv",
     "enabled": true,
     "execution_params": {
       "num_trials": 10,
@@ -108,7 +108,7 @@
     "add_noise_percent": 5
   },
  {
-    "experiment_name": "RBF-vs-2Q-2R-EntL-Noise5",
+    "experiment_name": "RBF-vs-2Q-2R-EntL-Noise5-5Fcv",
     "enabled": true,
     "execution_params": {
       "num_trials": 10,
@@ -135,7 +135,7 @@
     "add_noise_percent": 5
   } ,
   {
-    "experiment_name": "RBF-vs-2Q-2R-Entc-Noise5",
+    "experiment_name": "RBF-vs-2Q-2R-Entc-Noise5-5Fcv",
     "enabled": true,
     "execution_params": {
       "num_trials": 10,
@@ -162,7 +162,7 @@
     "add_noise_percent": 5
   },
   {
-    "experiment_name": "RBF-vs-2Q-2R-EntF-Noise10",
+    "experiment_name": "RBF-vs-2Q-2R-EntF-Noise10-5Fcv",
     "enabled": true,
     "execution_params": {
       "num_trials": 10,
@@ -189,7 +189,7 @@
     "add_noise_percent": 10
   },
  {
-    "experiment_name": "RBF-vs-2Q-2R-EntL-Noise10",
+    "experiment_name": "RBF-vs-2Q-2R-EntL-Noise10-5Fcv",
     "enabled": true,
     "execution_params": {
       "num_trials": 10,
@@ -216,7 +216,7 @@
     "add_noise_percent": 10
   } ,
   {
-    "experiment_name": "RBF-vs-2Q-2R-Entc-Noise10",
+    "experiment_name": "RBF-vs-2Q-2R-Entc-Noise10-5Fcv",
     "enabled": true,
     "execution_params": {
       "num_trials": 10,
@@ -244,7 +244,7 @@
   },
 
 {
-    "experiment_name": "RBF-vs-2Q-2R-EntF-Noise15",
+    "experiment_name": "RBF-vs-2Q-2R-EntF-Noise15-5Fcv",
     "enabled": true,
     "execution_params": {
       "num_trials": 10,
@@ -271,7 +271,7 @@
     "add_noise_percent": 15
   },
  {
-    "experiment_name": "RBF-vs-2Q-2R-EntL-Noise15",
+    "experiment_name": "RBF-vs-2Q-2R-EntL-Noise15-5Fcv",
     "enabled": true,
     "execution_params": {
       "num_trials": 10,
@@ -298,7 +298,7 @@
     "add_noise_percent": 15
   } ,
   {
-    "experiment_name": "RBF-vs-2Q-2R-Entc-Noise15",
+    "experiment_name": "RBF-vs-2Q-2R-Entc-Noise15-5Fcv",
     "enabled": true,
     "execution_params": {
       "num_trials": 10,
